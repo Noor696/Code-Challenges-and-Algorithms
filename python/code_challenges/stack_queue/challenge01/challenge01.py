@@ -12,18 +12,12 @@
 # Depending on your language, the stack may not be supported natively. You may simulate a stack using a list or deque (double-ended queue) as long as you use only a stack's standard operations.
  
 
-# Example 1:
-
-# MyQueue myQueue = new MyQueue();
-# myQueue.push(1); // queue is: [1]
-# myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
-# myQueue.peek(); // return 1
-# myQueue.pop(); // return 1, queue is [2]
-# myQueue.empty(); // return false
-
 class MyQueue:
+    
+  
     def __init__(self) -> None:
        self.queue = []
+       self.size=0
 
     
     def push(self,element):
@@ -32,6 +26,9 @@ class MyQueue:
         '''
 
         self.queue.append(element)
+        self.size +=1
+        return self.queue
+
 
 
     def pop(self):
@@ -42,15 +39,16 @@ class MyQueue:
 
         stack_1=self.queue
         stack_2=[]
+
         for i in range(len(stack_1)):
             
             stack_2.append(stack_1.pop())
-        removed_item=stack_2.pop()
-        self.queue=[]
+        remove_member=stack_2.pop()
 
         for i in range(len(stack_2)-1,-1,-1):
             self.queue.append(stack_2[i])
-        return removed_item
+            
+        return remove_member
 
 
     def peek(self):
@@ -58,10 +56,9 @@ class MyQueue:
         Returns the element at the front of the queue. 
         '''
 
-        if self.top:
-            return self.queue[0]
-        else:
-            return("This stack is empty")
+        
+        return self.queue[0]
+        
 
     def empty(self):
 
@@ -73,3 +70,17 @@ class MyQueue:
             return False
         else:
             return True
+
+# to check
+if __name__ =="__main__":
+ 
+    queue1=MyQueue()
+
+    # add element [1,2]
+    print("queue1.push('A'), queue = ", queue1.push("A"))
+    print("queue1.push('B'), queue = ",queue1.push("B"))
+
+    print("queue1.peek() -> ",queue1.peek())
+
+    print("queue1.pop() -> ",queue1.pop())
+    print("queue1.empty() -> ",queue1.empty())
