@@ -47,8 +47,8 @@ class MyQueue:
 
         for i in range(len(stack_2)-1,-1,-1):
             self.queue.append(stack_2[i])
-            
-        return remove_member
+
+        return remove_member, self.queue
 
 
     def peek(self):
