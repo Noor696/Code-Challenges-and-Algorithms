@@ -2,12 +2,14 @@
 
 ### Implement Queue Using Stack
 
+![](./stack-chalenge1.PNG)
+
 ### Problem Domain:
 
 Implement a first in first out (FIFO) queue using two stacks. which queue should support all the functions of a normal queue (push, peek , pop, and empty).
 
-  - input:  elements and performing some operations on them
-  - output: Queue
+  - **input:**  elements and performing some operations on them
+  - **output:** Queue
 
 ### Test Cases:
 

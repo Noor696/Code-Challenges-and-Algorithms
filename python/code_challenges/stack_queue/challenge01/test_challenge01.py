@@ -1,4 +1,5 @@
 # Write your test here
+import pytest
 from challenge01 import MyQueue
 
 def test_queue_push():
@@ -25,7 +26,7 @@ def test_queue_pop():
     queue_2.push("D")
     
     actual=queue_2.pop(),queue_2.queue
-    expect=1,["B","C","D"]
+    expect="A",["B","C","D"]
 
     assert actual == expect
 
