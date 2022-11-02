@@ -1,4 +1,5 @@
 # Write your test here
+# import pytest
 from challenge02 import Node,LinkedList,middle_node
 
 def test_middle_node_1():
@@ -18,7 +19,7 @@ def test_middle_node_1():
     linkedList1.append(node5)
 
     actual=middle_node(node1)
-    expect=[3,4,5]
+    expect=3
 
     assert actual==expect
 
@@ -42,7 +43,7 @@ def test_middle_node_2():
     linkedList2.append(node6)
 
     actual=middle_node(node1)
-    expect=[4,5,6]
+    expect= 4
 
     assert actual==expect
 
@@ -60,7 +61,7 @@ def test_middle_node_3():
     linkedList3.append(node3)
 
     actual=middle_node(node1)
-    expect=[1,2,3]
+    expect= 2
 
     assert actual==expect
 

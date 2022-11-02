@@ -54,7 +54,9 @@ def middle_node(head):
             new_arr.append(mid_node.value)
             mid_node=mid_node.next
 
-    return new_arr
+    new_arr_mid = new_arr[0]
+
+    return new_arr_mid
 
 
 
@@ -74,12 +76,10 @@ if __name__ == "__main__":
  linkedList1.append(node4)
  node5 = Node(5)
  linkedList1.append(node5)
- node6 = Node(6)
- linkedList1.append(node6)
 
  print (linkedList1.display())
  print (middle_node(linkedList1.head))
-#     expect=[3,4,5]
+#     expect=3
 
 
  print ("test middle node (1,2,3,4,5,6)")
@@ -98,9 +98,7 @@ if __name__ == "__main__":
  node6 = Node(6)
  linkedList2.append(node6)
  
- # expect=[4,5,6]
+ # expect= 4
 
  print (linkedList2.display())
  print (middle_node(linkedList2.head))
-
-
