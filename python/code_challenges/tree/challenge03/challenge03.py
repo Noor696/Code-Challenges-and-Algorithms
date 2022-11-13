@@ -10,7 +10,7 @@ class Node :
 class Tree:
 
     def __init__(self) -> None:
-        self.tree_list=[]
+        self.tree_array=[]
 
     def convert_to_BST(self,nums):
 
@@ -18,20 +18,20 @@ class Tree:
         function to convert sorted array to a balanced BST
         '''
 
-        idx=len(nums)//2 # to find the middle index
+        idex =len(nums)//2 # to find the middle index
 
         if  not nums:
             return None
         
-        left= nums[:idx]
-        right=nums[idx+1:]
-        root=Node(nums[idx],self.convert_to_BST(left),self.convert_to_BST(right))   
+        left= nums[:idex]
+        right=nums[idex+1:]
+        root=Node(nums[idex],self.convert_to_BST(left),self.convert_to_BST(right))   
 
         return root
 
 
  
-    def display_tree(self,root):
+    def output_tree(self,root):
         
         if not root:
             return ['null']               
@@ -40,22 +40,27 @@ class Tree:
 
             if root.left:
        
-                self.tree_list.append(root.left.value)
+                self.tree_array.append(root.left.value)
                 try:
-                    self.tree_list.append(root.right.value)
+                    self.tree_array.append(root.right.value)
                 except AttributeError:
-                    self.tree_list.append('null')
+                    self.tree_array.append('null')
                 
             else:
 
                 if not root.left:
-                    self.tree_list.append('null')
+                    self.tree_array.append('null')
                     
                     if not root.right:
-                        self.tree_list.append('null')
+                        self.tree_array.append('null')
 
-            self.display_tree(root.left)  
-            self.display_tree(root.right)      
+            self.output_tree(root.left)  
+            self.output_tree(root.right)      
 
-        return self.tree_list 
+        return self.tree_array 
 
+if __name__ == '__main__':
+    tree1 = Tree()
+    root = tree1.convert_to_BST([1,2,3])
+    actual = tree1.output_tree(root)
+    print(actual)
