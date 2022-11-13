@@ -1,5 +1,7 @@
 ## Convert Sorted Array to BST:
 
+![](./whiteBalancedTree.PNG)
+
 ### Problem Domain:
 
 Given an integer array nums, convert it to a height-balanced binary search tree.
