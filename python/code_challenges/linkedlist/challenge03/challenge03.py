@@ -36,33 +36,62 @@ class LinkedList:
 
             current_node.next = node
 
+
     def printAll(self):
-        if self.head is None:
-            return []
-        else:
-            current = self.head
-            link_output=[]
-            while current is not None:
-                link_output.append(current.value)  # put the value inside linkedlist output
-                current = current.next
-            return link_output
+        
+        current = self.head
+        link_output=[]
+        while current is not None:
+            link_output.append(current.value)  # put the value inside linkedlist output
+            current = current.next
+
+        return link_output
 
 
+def remove_nth_node(head,n):
+    '''
+    remove the nth node from the end of the list and return its head. 
+    '''
+
+    it_arr=head
+    length_arr = 0
+
+    while it_arr:  # to find length of linkedlist
+        it_arr = it_arr.next
+        length_arr= length_arr+1
+
+    if length_arr == n :
+        return head.next
     
+    it_arr = head
+
+    for i in range(0, length_arr -n -1): 
+        it_arr = it_arr.next
+
+    it_arr.next = it_arr.next.next
+
+    return head
+
 
 if __name__== "__main__":
 
     
     linkedList1 = LinkedList()
 
-    node1 = Node("A")
+    node1 = Node(1)
     linkedList1.append(node1)
-    node2 = Node("B")
+    node2 = Node(2)
     linkedList1.append(node2)
-    node3 = Node("C")
+    node3 = Node(3)
     linkedList1.append(node3)
-    node4 = Node("D")
+    node4 = Node(4)
     linkedList1.append(node4)
+    node5 = Node(5)
+    linkedList1.append(node5)
+
+    # print (linkedList1.printAll())
+    print (remove_nth_node(node4, 2))
+
 
 
 
