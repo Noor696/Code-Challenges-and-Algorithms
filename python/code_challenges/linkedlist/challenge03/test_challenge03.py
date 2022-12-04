@@ -21,6 +21,8 @@ def test_remove_nth_node_1():
     actual = linkedList1.printAll()
     expect = [1,3,4,5]
 
+    assert actual == expect
+
 
 def test_remove_nth_node_2():
 
