@@ -1,4 +1,4 @@
-![]()
+![](./removenthnode.PNG)
 
 ## problem Domain:
 
