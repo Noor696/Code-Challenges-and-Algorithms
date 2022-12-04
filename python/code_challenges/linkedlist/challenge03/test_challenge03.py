@@ -16,10 +16,10 @@ def test_remove_nth_node_1():
     node4 = Node(5)
     linkedList1.append(node4)
 
-    remove_nth_node(node1,4)
+    remove_nth_node(node1,3)
     
     actual = linkedList1.printAll()
-    expect = [1,3,4,5]
+    expect = [1,2,4,5]
 
     assert actual == expect
 
@@ -55,10 +55,10 @@ def test_remove_nth_node_3():
     node3 = Node(3)
     linkedList3.append(node3)
   
-    remove_nth_node(node1,1)
+    remove_nth_node(node1,2)
     
     actual = linkedList3.printAll()
-    expect = [1,2]
+    expect = [1,3]
 
     assert actual == expect
 
