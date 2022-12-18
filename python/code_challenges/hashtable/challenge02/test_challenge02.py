@@ -41,3 +41,29 @@ class HashTabel():
                 self.map[hashed_key] = chain
                 chain.add(existing_pair)
                 chain.add(new_pair)
+
+
+def First_Repeated_Word(string):
+    '''
+    function that will take a string as a parameter 
+    and return the first repeated word in that string.
+    input :string
+    output :string
+    '''
+    sent = set()
+    word = string.split()
+    for s in word:
+        if s in sent: 
+            return s
+
+        else: 
+            sent.add(s)
+
+    return "No Repetition"
+
+
+if __name__ == '__main__':
+
+    a = "ASAC is a department at LTUC. ASAC teaches programming in LTUC ."
+    print (a)
+    print ("repeated word --> ", First_Repeated_Word(a))
