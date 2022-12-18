@@ -1,4 +1,4 @@
-
+![](./repeated-word-whiteboard.PNG)
 
 ## example of standard hashing algorithm :
 
