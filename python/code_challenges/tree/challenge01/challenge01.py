@@ -4,10 +4,12 @@ class Node:
     take a value and return a node value,with left and right values.
     
     '''
-    def __init__(self,value) -> None:
+    def __init__(self,value=None):
         self.value=value
         self.right=None
         self.left=None
+
+
 
 class Tree:
 
@@ -17,22 +19,27 @@ class Tree:
         inorder: List[int]
         return: TreeNode'''
 
-        if inorder:
+        if not preorder or not inorder:
+            return None
 
-            INDEX_root = inorder.index(preorder.pop(0))
-            root = Node(inorder[INDEX_root])
-            root.left = self.buildTree(preorder, inorder[:INDEX_root])
-            root.right = self.buildTree(preorder, inorder[INDEX_root+1:])
-			
-            return root
+        root = Node(preorder[0])
+        mid = inorder.index(preorder[0])
+        root.left = self.binaryTree(preorder[1:mid+1], inorder[:mid])
+        root.right = self.binaryTree(preorder[mid+1:], inorder[mid+1:])
+
+        return root
+
+ 
 
 tree1 = Tree()
-tree1.binaryTree([3,9,20,15,7],[9,3,15,20,7]).value
-# print (tree1)
+tree1.binaryTree([3,9,20,15,7],[9,3,15,20,7])
+# tree1.binaryTree([3,9,20,15,7],[9,3,15,20,7]).value
+
+
 
 def buildTree(root):
     final_tree=[]
-    root_right=root
+    root_right=root.right
     final_tree.append(root.value)
 
     while root.left and root.right:
@@ -61,11 +68,13 @@ def buildTree(root):
         root_right=root_right.right
 
 
-    print(final_tree)
+    return (final_tree)
 
 
+print(buildTree(tree1.binaryTree([3,9,20,15,7],[9,3,15,20,7])))
 
-buildTree(tree1.binaryTree([3,9,20,15,7],[9,3,15,20,7]))
+print(buildTree(tree1.binaryTree([4,3,6],[3,4,6])))
+
 
 
     
@@ -74,24 +83,3 @@ buildTree(tree1.binaryTree([3,9,20,15,7],[9,3,15,20,7]))
     
 
     
-
-
-
-
-
-# def pre_order(root):
-#     if root is not None:
-#         print(root.value)
-#     if root.left is not None:
-#         pre_order(root.left)
-#     if root.right is not None:
-#         pre_order(root.right)
-
-# def in_order(root):
-#     if root.left is not None:
-#         in_order(root.left)
-#     if root is not None:
-#         print(root.value)
-#     if root.right is not None:
-#         in_order(root.right)
-
