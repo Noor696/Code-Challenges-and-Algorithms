@@ -1,3 +1,5 @@
+![](./hashchalenge01.PNG)
+
 # Hash Table:
 
 ## Challenge01 - Two Sum BST:
